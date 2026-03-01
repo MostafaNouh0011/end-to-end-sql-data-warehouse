@@ -1,9 +1,12 @@
 /*****************************************************************************************
-Script Name : ddl_silver_layer.sql
+Script Name : Create Silver Tables (DDL)
+
 Layer       : Silver Layer (Cleansed & Standardized Data)
+
 Description :
-      Creates Silver layer tables used for cleaned, validated, and standardized data
-      before transformation into the Gold layer.
+      Creates the Silver layer tables that store cleansed and standardized data 
+      loaded from the Bronze layer. These tables serve as the intermediate layer 
+      before building the analytical Gold layer.
 ******************************************************************************************/
 
 -- Ensure Schema Exists
