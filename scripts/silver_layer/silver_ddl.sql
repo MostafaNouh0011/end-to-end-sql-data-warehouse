@@ -1,6 +1,6 @@
 /*****************************************************************************************
-Script Name : Create Silver Tables (DDL)
-
+Script Name : silver_ddl.sql
+Database    : DataWarehouse
 Layer       : Silver Layer (Cleansed & Standardized Data)
 
 Description :
@@ -45,6 +45,7 @@ GO
 
 CREATE TABLE silver.crm_prd_info (
     prd_id          INT,
+    cat_id          NVARCHAR(50), 
     prd_key         NVARCHAR(50),
     prd_nm          NVARCHAR(200),
     prd_cost        INT,
