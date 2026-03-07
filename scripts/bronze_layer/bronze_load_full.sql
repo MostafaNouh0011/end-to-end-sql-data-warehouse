@@ -1,31 +1,26 @@
 /*****************************************************************************************
-Procedure Name: bronze.load_bronze
+Procedure Name: bronze.sp_load_bronze_layer
 Layer         : Bronze Layer (Raw Ingestion Layer)
-Load Type     : Full Load (Truncate & Reload)
+Load Type     : Full Load (TRUNCATE + BULK INSERT)
 
 Description:
-This stored procedure performs a full batch load of all source CRM and ERP CSV files 
-into the Bronze schema tables.
+    This stored procedure performs a full batch load of all source CRM and ERP CSV files 
+    into the Bronze schema tables.
 
 For each table, the procedure:
-1. Truncates the existing data.
-2. Bulk loads fresh data from the source CSV files.
-3. Logs execution time for monitoring purposes.
+    1. Truncates the existing data.
+    2. Bulk loads fresh data from the source CSV files.
+    3. Logs execution time for monitoring purposes.
 
-The Bronze layer stores raw, untransformed source data exactly as received.
-This layer serves as the foundation for downstream transformations into
-Silver and Gold layers within the Data Warehouse architecture.
+The Bronze layer stores raw, untransformed source data exactly as received. 
+This layer serves as the foundation for downstream transformations into Silver and Gold layers within the Data Warehouse architecture.
+
 
 Error Handling:
-A TRY/CATCH block captures and prints detailed error information 
-to assist in troubleshooting load failures.
-
-Execution:
-EXEC bronze.load_bronze;
-
+A TRY...CATCH block captures and prints detailed error information to assist in troubleshooting load failures.
 ******************************************************************************************/
 
-CREATE OR ALTER PROCEDURE bronze.load_bronze AS
+CREATE OR ALTER PROCEDURE bronze.sp_load_bronze_layer AS
 BEGIN
     SET NOCOUNT ON;
 
@@ -221,5 +216,6 @@ BEGIN
     END CATCH
 END;
 GO
-
-EXEC bronze.load_bronze;
+    
+-- Execution..
+EXEC bronze.sp_load_bronze_layer;
