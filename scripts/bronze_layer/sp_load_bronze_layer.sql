@@ -12,8 +12,10 @@ For each table, the procedure:
     2. Bulk loads fresh data from the source CSV files.
     3. Logs execution time for monitoring purposes.
 
+
 The Bronze layer stores raw, untransformed source data exactly as received. 
-This layer serves as the foundation for downstream transformations into Silver and Gold layers within the Data Warehouse architecture.
+This layer serves as the foundation for downstream transformations into 
+Silver and Gold layers within the Data Warehouse architecture.
 
 
 Error Handling:
