@@ -65,6 +65,7 @@ The ETL process is implemented using **SQL Stored Procedures**:
 
 ## 📁 Project Structure
 
+```text
 ├── data_sources/
 │   ├── source_crm/
 │   └── source_erp/
@@ -75,6 +76,7 @@ The ETL process is implemented using **SQL Stored Procedures**:
 │   └── gold_layer/
 ├── tests/
 └── README.md
+```
 
 ---
 
