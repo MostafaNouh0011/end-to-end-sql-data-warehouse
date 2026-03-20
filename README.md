@@ -1,49 +1,112 @@
-# End-to-End SQL Data Warehouse Project
+# 🏗️ End-to-End SQL Data Warehouse
 
-Welcome to the **End-to-End SQL Data Warehouse** repository! 🚀  
-This project demonstrates a complete modern data warehousing solution built entirely with SQL — from raw data ingestion to analytics-ready datasets and reporting.
-
+A complete **end-to-end Data Warehouse project** built using SQL Server, implementing **ETL pipelines, Medallion Architecture, and Star Schema modeling** for analytics and reporting.
 
 ---
 
-## 📖 Project Overview
+## 📌 Project Overview
 
-This project covers the full lifecycle of building a production-style data warehouse:
+This project demonstrates how to:
 
-### 🏗️ Data Architecture
-Implementation of a modern data warehouse using the **Medallion Architecture** pattern:
+- Build a **modern Data Warehouse from scratch**
+- Design **Medallion Architecture (Bronze, Silver, Gold)**
+- Implement **ETL pipelines using SQL**
+- Perform **data cleaning, transformation, and integration**
+- Create a **business-ready analytical model (Star Schema)**
+- Apply **data quality checks**
 
-- **Bronze Layer** – Raw data ingestion from source systems  
-- **Silver Layer** – Cleaned and transformed data  
-- **Gold Layer** – Business-ready, analytics-optimized data models  
-
----
-
-### 🔄 ETL Pipelines
-SQL-based ETL processes to:
-
-- Extract data from source systems  
-- Transform and standardize datasets  
-- Load structured data into warehouse layers  
-- Implement data quality checks and validation  
+🎯 The goal is to transform raw CRM & ERP data into **trusted, analytics-ready datasets** for reporting and decision-making.
 
 ---
 
-### 🧱 Data Modeling
-Development of analytics-optimized schemas including:
+## 🏗️ Data Architecture
 
-- Fact tables for measurable business events  
-- Dimension tables for descriptive attributes  
-- Star schema modeling  
-- Surrogate key implementation  
-- Relationship management (PK/FK constraints)  
+This project follows the **Medallion Architecture**, a standard approach in modern data engineering.
+
+### 📊 Architecture Diagram
+
+![Data Architecture](docs/data_architecture.png)
+
+### 🔄 Architecture Flow
+
+Sources (CRM, ERP CSV Files)  
+↓  
+Bronze Layer (Raw Data)  
+↓  
+Silver Layer (Cleaned & Standardized Data)  
+↓  
+Gold Layer (Business-Ready Data)  
+↓  
+Data Consumers (BI, SQL, ML)  
+
+### 📌 Layers Overview
+
+- **Bronze Layer:** Stores raw data from source systems with no transformations (full load).
+- **Silver Layer:** Cleans, standardizes, and enriches data by handling nulls, duplicates, and inconsistencies.
+- **Gold Layer:** Provides business-ready data modeled using a Star Schema for analytics and reporting.
 
 ---
 
-### 📊 Analytics & Reporting
-Creation of SQL queries and reporting datasets to:
+## ⚙️ ETL Pipeline
 
-- Generate KPIs and business metrics  
-- Support dashboard integrations  
-- Enable ad-hoc analysis  
-- Improve query performance for reporting workloads  
+The ETL process is implemented using **SQL Stored Procedures**:
+
+### 🔹 Bronze Load
+- Load raw CSV data into Bronze tables
+
+### 🔹 Silver Load
+- Clean, transform, and standardize data
+
+### 🔹 Gold Layer
+- Build analytical views (dimensions & fact tables)
+
+---
+
+## 📁 Project Structure
+
+├── data_sources/
+│   ├── source_crm/
+│   └── source_erp/
+│
+├── docs/
+│
+├── scripts/
+│   ├── bronze_layer/
+│   ├── silver_layer/
+│   └── gold_layer/
+│
+├── tests/
+│
+└── README.md
+
+---
+
+## ✅ Data Quality
+
+Data quality checks are implemented to ensure:
+
+- No NULL values in primary keys
+- No duplicate records
+- Valid relationships between tables
+- Valid business rules (e.g., positive sales, valid dates)
+
+---
+
+## 🛠️ Technologies Used
+
+- Microsoft SQL Server  
+- Transact-SQL (T-SQL)  
+- SQL Server Management Studio (SSMS)  
+- draw.io  
+- CSV Files  
+- Star Schema Modeling  
+
+---
+
+## 🚀 How to Run the Project
+
+1. Create the database:
+```sql
+CREATE DATABASE DataWarehouse;
+EXEC bronze.load_bronze;
+EXEC silver.load_silver;
