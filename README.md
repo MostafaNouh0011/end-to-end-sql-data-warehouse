@@ -15,6 +15,7 @@ This project demonstrates how to:
 - Create a **business-ready analytical model (Star Schema)**
 - Apply **data quality checks**
 
+
 🎯 The goal is to transform raw CRM & ERP data into **trusted, analytics-ready datasets** for reporting and decision-making.
 
 ---
@@ -67,16 +68,12 @@ The ETL process is implemented using **SQL Stored Procedures**:
 ├── data_sources/
 │   ├── source_crm/
 │   └── source_erp/
-│
 ├── docs/
-│
 ├── scripts/
 │   ├── bronze_layer/
 │   ├── silver_layer/
 │   └── gold_layer/
-│
 ├── tests/
-│
 └── README.md
 
 ---
