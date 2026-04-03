@@ -104,8 +104,7 @@ Data quality checks are implemented to ensure:
 
 ## 🚀 How to Run the Project
 
-1. Create the database:
 ```sql
 CREATE DATABASE DataWarehouse;
-EXEC bronze.load_bronze;
-EXEC silver.load_silver;
+EXEC bronze.sp_load_bronze_layer;
+EXEC silver.sp_load_silver_layer;
