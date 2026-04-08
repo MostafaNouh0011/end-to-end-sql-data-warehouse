@@ -1,22 +1,21 @@
-# 🏗️ End-to-End SQL Data Warehouse
+# 🏗️ End-to-End SQL Data Warehouse & Analytics
 
-A complete **end-to-end Data Warehouse project** built using SQL Server, implementing **ETL pipelines, Medallion Architecture, and Star Schema modeling** for analytics and reporting.
+A complete **end-to-end Data Warehouse project** built with SQL Server, implementing **ETL pipelines, Medallion Architecture, and Star Schema modeling** for analytics.
 
 ---
 
-## 📌 Project Overview
+## 📌 Problem & Overview
 
-This project demonstrates how to:
+In many organizations, data from CRM and ERP systems is fragmented, inconsistent, and difficult to analyze. This project addresses that challenge by transforming raw data into **clean, structured, and analytics-ready datasets**.
 
-- Build a **modern Data Warehouse from scratch**
-- Design **Medallion Architecture (Bronze, Silver, Gold)**
-- Implement **ETL pipelines using SQL**
+### 🎯 Goal:
+
+- Build a **modern data warehouse end-to-end**
+- Design **Medallion Architecture (Bronze → Silver → Gold)**
+- Develop **ETL pipelines using SQL**
 - Perform **data cleaning, transformation, and integration**
 - Create a **business-ready analytical model (Star Schema)**
 - Apply **data quality checks**
-
-
-🎯 The goal is to transform raw CRM & ERP data into **trusted, analytics-ready datasets** for reporting and decision-making.
 
 ---
 
@@ -61,6 +60,39 @@ The ETL process is implemented using **SQL Stored Procedures**:
 ### 🔹 Gold Layer
 - Build analytical views (dimensions & fact tables)
 
+### Data Flow
+
+![Data Flow](docs/data_flow.png)
+
+---
+
+## 📐 Data Modeling
+
+This project implements a **dimensional data modeling approach** using a **Star Schema** design in the Gold layer to support efficient analytical queries and reporting.
+
+### ⭐ Star Schema Design
+
+The **Gold layer** is structured as a **Star Schema**, consisting of:
+
+#### 🔹 Fact Table
+
+- `fact_sales`
+  - Contains transactional (measurable) data
+  - Represents business events (e.g., sales transactions)
+  - Stores key metrics such as:
+    - `sales_amount`
+    - `quantity`
+    - `revenue`
+
+#### 🔹 Dimension Tables
+
+- `dim_customers` → stores customer information
+- `dim_products` → stores product details
+
+### Data Model
+
+![Data Model](docs/data_model.png)
+
 ---
 
 ## 📁 Project Structure
@@ -71,9 +103,10 @@ The ETL process is implemented using **SQL Stored Procedures**:
 │   └── source_erp/
 ├── docs/
 ├── scripts/
-│   ├── bronze_layer/
-│   ├── silver_layer/
-│   └── gold_layer/
+│   ├── 01_bronze_layer/
+│   ├── 02_silver_layer/
+|   ├── 03_gold_layer/
+│   └── 04_analytics/
 ├── tests/
 └── README.md
 ```
@@ -91,14 +124,13 @@ Data quality checks are implemented to ensure:
 
 ---
 
-## 🛠️ Technologies Used
+## 🧰 Tech Stack
 
 - Microsoft SQL Server  
 - Transact-SQL (T-SQL)  
 - SQL Server Management Studio (SSMS)  
 - draw.io  
-- CSV Files  
-- Star Schema Modeling  
+- CSV
 
 ---
 
