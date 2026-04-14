@@ -60,7 +60,7 @@ The ETL process is implemented using **SQL Stored Procedures**:
 ### 🔹 Gold Layer
 - Build analytical views (dimensions & fact tables)
 
-### Data Flow
+### 🔄 Data Flow
 
 ![Data Flow](docs/data_flow.png)
 
@@ -92,6 +92,24 @@ The **Gold layer** is structured as a **Star Schema**, consisting of:
 ### Data Model
 
 ![Data Model](docs/data_model.png)
+
+---
+
+## 📊 Analytics & Insights
+
+An **analytics layer** was built using SQL to perform **Exploratory Data Analysis (EDA)** and generate business insights.
+
+### 🔍 Analysis Includes:
+
+- Data profiling & quality checks  
+- KPI calculations (Revenue, Orders, AOV)  
+- Customer segmentation (High / Medium / Low value)  
+- Product performance analysis  
+- Revenue distribution by category  
+- Time-based trends (monthly/yearly)  
+
+👉 See full insights:  
+`scripts/04_analytics/insights.md`
 
 ---
 
