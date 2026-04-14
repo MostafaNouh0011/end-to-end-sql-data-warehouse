@@ -86,25 +86,25 @@ Key business metrics identified:
 ## 🖼️ Key Visual Insights
 
 ### 💰 Business KPIs
-![KPIs](04_analytics/images/eda_kpis.png)
+![KPIs](Images/eda_kpis.png)
 👉 Provides a high-level overview of revenue, orders, and customer activity.
 
 ---
 
 ### 🌍 Customers by Country
-![Customers by Country](04_analytics/images/customers_by_country.png)
+![Customers by Country](Images/customers_by_country.png)
 👉 Highlights key geographic markets driving customer base.
 
 ---
 
 ### 📦 Revenue by Category
-![Revenue by Category](04_analytics/images/revenue_by_category.png)
+![Revenue by Category](Images/revenue_by_category.png)
 👉 Shows which product categories contribute most to revenue.
 
 ---
 
 ### 🏆 Top Products
-![Top Products](04_analytics/images/top_products.png)
+![Top Products](Images/top_products.png)
 👉 Identifies best-performing products by revenue.
 
 
@@ -118,3 +118,8 @@ Key business metrics identified:
 - Top 20% of customers generate 66.4% of total revenue
 - US and Australia together drive 62.1% of revenue at ~$9M each
 - Revenue grew 180% in 2013 ($5.8M → $16.3M) — the cause behind this spike is unknown and worth investigating
+
+---
+
+### 📊 Product Dashboard
+![Dashboard](Images/product_dashboard.png)
